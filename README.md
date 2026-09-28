@@ -13,9 +13,9 @@ Source code, documentation and the Android and Flutter SDKs live in
 
 | Platform | Version | Install |
 |---|---|---|
-| iOS | 3.1.2 | Swift Package Manager (recommended) or CocoaPods |
+| iOS | 3.1.3 | Swift Package Manager (recommended) or CocoaPods |
 | Android | 3.1.0 | Maven Central: `io.github.jimmyleonardo:aegis-guardian:3.1.0` |
-| Flutter | 3.1.2 | pub.dev: [`aegis_guardian`](https://pub.dev/packages/aegis_guardian) |
+| Flutter | 3.1.3 | pub.dev: [`aegis_guardian`](https://pub.dev/packages/aegis_guardian) |
 
 Release notes: [CHANGELOG](https://github.com/jimmyleonardo/aegis-guardian/blob/main/CHANGELOG.md).
 
@@ -33,7 +33,7 @@ In Xcode: **File → Add Package Dependencies…** and enter
 `https://github.com/jimmyleonardo/aegis-guardian-ios-binary.git`, or in `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/jimmyleonardo/aegis-guardian-ios-binary.git", exact: "3.1.2")
+.package(url: "https://github.com/jimmyleonardo/aegis-guardian-ios-binary.git", exact: "3.1.3")
 ```
 
 Add the `AegisGuardian` product to your target and `import AegisGuardian`.
@@ -44,7 +44,7 @@ CocoaPods Trunk is becoming read-only, so new releases may stop reaching CocoaPo
 Prefer Swift Package Manager for new projects.
 
 ```ruby
-pod 'AegisGuardian', '3.1.2'
+pod 'AegisGuardian', '3.1.3'
 ```
 
 ## Quick start
