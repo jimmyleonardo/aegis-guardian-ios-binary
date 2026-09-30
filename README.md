@@ -13,9 +13,9 @@ Source code, documentation and the Android and Flutter SDKs live in
 
 | Platform | Version | Install |
 |---|---|---|
-| iOS | 3.1.3 | Swift Package Manager (recommended) or CocoaPods |
-| Android | 3.1.0 | Maven Central: `io.github.jimmyleonardo:aegis-guardian:3.1.0` |
-| Flutter | 3.1.3 | pub.dev: [`aegis_guardian`](https://pub.dev/packages/aegis_guardian) |
+| iOS | 3.2.0 | Swift Package Manager (recommended) or CocoaPods |
+| Android | 3.2.0 | Maven Central: `io.github.jimmyleonardo:aegis-guardian:3.2.0` |
+| Flutter | 3.2.0 | pub.dev: [`aegis_guardian`](https://pub.dev/packages/aegis_guardian) |
 
 Release notes: [CHANGELOG](https://github.com/jimmyleonardo/aegis-guardian/blob/main/CHANGELOG.md).
 
@@ -33,7 +33,7 @@ In Xcode: **File → Add Package Dependencies…** and enter
 `https://github.com/jimmyleonardo/aegis-guardian-ios-binary.git`, or in `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/jimmyleonardo/aegis-guardian-ios-binary.git", exact: "3.1.3")
+.package(url: "https://github.com/jimmyleonardo/aegis-guardian-ios-binary.git", exact: "3.2.0")
 ```
 
 Add the `AegisGuardian` product to your target and `import AegisGuardian`.
@@ -44,7 +44,7 @@ CocoaPods Trunk is becoming read-only, so new releases may stop reaching CocoaPo
 Prefer Swift Package Manager for new projects.
 
 ```ruby
-pod 'AegisGuardian', '3.1.3'
+pod 'AegisGuardian', '3.2.0'
 ```
 
 ## Quick start
@@ -81,9 +81,22 @@ identity and blacklist results require Aegis Sentinel; see the
 
 - [iOS guide](https://github.com/jimmyleonardo/aegis-guardian/blob/main/ios/README.md)
 - [Security model](https://github.com/jimmyleonardo/aegis-guardian/blob/main/docs/security-model.md)
-- [3.1.0 migration guide](https://github.com/jimmyleonardo/aegis-guardian/blob/main/docs/migration-3.1.0.md)
+- [3.2.0 migration guide](https://github.com/jimmyleonardo/aegis-guardian/blob/main/docs/migration-3.2.0.md)
 - [Changelog](https://github.com/jimmyleonardo/aegis-guardian/blob/main/CHANGELOG.md)
 
 ## License
 
 Apache License 2.0. See [LICENSE](https://github.com/jimmyleonardo/aegis-guardian-ios-binary/blob/main/LICENSE).
+
+## Optional automatic App Attest (3.2.0)
+
+Configure `SentinelConfig(baseURL: sentinelURL, clientId: publicClientId,
+appAttestEnabled: true)` to enroll automatically and submit verified telemetry.
+The signed host must enable App Attest and Sentinel must contain the matching
+Bundle ID and Apple Team ID. With `appAttestEnabled: false` (the default), iOS
+still sends telemetry as `UNVERIFIED` using only URL and Client ID. Opted-in
+App Attest failures do not fall back to unverified submissions.
+
+Production App Attest enrollment and telemetry were confirmed through the Flutter
+Pulse Pilates release app on a physical iPhone 11 on 2026-09-30. The XCFramework
+includes matching device and simulator dSYMs.
