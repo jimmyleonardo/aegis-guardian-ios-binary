@@ -11,7 +11,7 @@ Source code, documentation and the Android and Flutter SDKs live in
 
 ## AegisPulse analytics
 
-Version 3.3.0 adds an independent `PulseAnalytics` client for lifecycle,
+Includes an independent `PulseAnalytics` client for lifecycle,
 screen/custom events, anonymous/member identity, purchases and refunds.
 Use your Sentinel origin and public analytics tracking key. Security scans,
 security Client IDs, enrollment and App Attest are not required for Pulse.
@@ -25,9 +25,9 @@ Examples use placeholders; no test deployment URL or tracking key is included.
 
 | Platform | Version | Install |
 |---|---|---|
-| iOS | 3.3.0 | Swift Package Manager (recommended) or CocoaPods |
-| Android | 3.3.0 | Maven Central: `io.github.jimmyleonardo:aegis-guardian:3.3.0` |
-| Flutter | 3.3.0 | pub.dev: [`aegis_guardian`](https://pub.dev/packages/aegis_guardian) |
+| iOS | 3.5.0 | Swift Package Manager (recommended) or CocoaPods |
+| Android | 3.5.0 | Maven Central: `id.aegis-sentinel:aegis-guardian:3.5.0` |
+| Flutter | 3.5.0 | pub.dev: [`aegis_guardian`](https://pub.dev/packages/aegis_guardian) |
 
 Release notes: [CHANGELOG](https://github.com/jimmyleonardo/aegis-guardian/blob/main/CHANGELOG.md).
 
@@ -45,7 +45,7 @@ In Xcode: **File → Add Package Dependencies…** and enter
 `https://github.com/jimmyleonardo/aegis-guardian-ios-binary.git`, or in `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/jimmyleonardo/aegis-guardian-ios-binary.git", exact: "3.3.0")
+.package(url: "https://github.com/jimmyleonardo/aegis-guardian-ios-binary.git", exact: "3.5.0")
 ```
 
 Add the `AegisGuardian` product to your target and `import AegisGuardian`.
@@ -56,7 +56,7 @@ CocoaPods Trunk is becoming read-only, so new releases may stop reaching CocoaPo
 Prefer Swift Package Manager for new projects.
 
 ```ruby
-pod 'AegisGuardian', '3.3.0'
+pod 'AegisGuardian', '3.5.0'
 ```
 
 ## Quick start
@@ -93,14 +93,13 @@ identity and blacklist results require Aegis Sentinel; see the
 
 - [iOS guide](https://github.com/jimmyleonardo/aegis-guardian/blob/main/ios/README.md)
 - [Security model](https://github.com/jimmyleonardo/aegis-guardian/blob/main/docs/security-model.md)
-- [3.3.0 migration guide](https://github.com/jimmyleonardo/aegis-guardian/blob/main/docs/migration-3.3.0.md)
 - [Changelog](https://github.com/jimmyleonardo/aegis-guardian/blob/main/CHANGELOG.md)
 
 ## License
 
 Apache License 2.0. See [LICENSE](https://github.com/jimmyleonardo/aegis-guardian-ios-binary/blob/main/LICENSE).
 
-## Optional automatic App Attest (3.3.0)
+## Optional automatic App Attest (3.5.0)
 
 Configure `SentinelConfig(baseURL: sentinelURL, clientId: publicClientId,
 appAttestEnabled: true)` to enroll automatically and submit verified telemetry.
