@@ -6,9 +6,6 @@ identity, Secure Enclave signing, App Attest client helpers, screen privacy, and
 fail-closed URLSession SPKI pinning. Premium Frida signals and dashboard decisions come
 from Aegis Sentinel.
 
-Source code, documentation and the Android and Flutter SDKs live in
-[jimmyleonardo/aegis-guardian](https://github.com/jimmyleonardo/aegis-guardian).
-
 ## AegisPulse analytics
 
 Includes an independent `PulseAnalytics` client for lifecycle,
@@ -17,17 +14,13 @@ Use your Sentinel origin and public analytics tracking key. Security scans,
 security Client IDs, enrollment and App Attest are not required for Pulse.
 Analytics uses its own endpoint, persistent queue and event limit.
 
-See the [analytics guide](https://github.com/jimmyleonardo/aegis-guardian/blob/main/analytics.md)
-and [verification report](https://github.com/jimmyleonardo/aegis-guardian/blob/main/docs/analytics-verification.md).
-Examples use placeholders; no test deployment URL or tracking key is included.
-
 ## AegisPulse push notifications (3.6.0)
 
 `PulsePush` registers the APNs device token with the analytics identity and
 reports opens and dismissals from `UNNotificationResponse`. In a Notification
 Service Extension, `PulseNotificationService` attaches images and per-notification
 action buttons. Like analytics, it never runs a security scan or sends security
-telemetry. See the [push notifications guide](https://github.com/jimmyleonardo/aegis-guardian/blob/main/docs/push-notifications.md).
+telemetry.
 
 ## Current releases
 
@@ -36,8 +29,6 @@ telemetry. See the [push notifications guide](https://github.com/jimmyleonardo/a
 | iOS | 3.6.0 | Swift Package Manager (recommended) or CocoaPods |
 | Android | 3.6.0 | Maven Central: `id.aegis-sentinel:aegis-guardian:3.6.0` |
 | Flutter | 3.6.0 | pub.dev: [`aegis_guardian`](https://pub.dev/packages/aegis_guardian) |
-
-Release notes: [CHANGELOG](https://github.com/jimmyleonardo/aegis-guardian/blob/main/CHANGELOG.md).
 
 ## Requirements
 
@@ -86,8 +77,7 @@ let shield = ScreenShield(window: window)
 ```
 
 `inspect()` runs locally and sends nothing. Frida detection, server-verified app
-identity and blacklist results require Aegis Sentinel; see the
-[iOS guide](https://github.com/jimmyleonardo/aegis-guardian/blob/main/ios/README.md).
+identity and blacklist results require Aegis Sentinel.
 
 ## Limits
 
@@ -96,12 +86,6 @@ identity and blacklist results require Aegis Sentinel; see the
 - iOS cannot block screenshots; `ScreenShield` hides content while the app is inactive
   or being captured.
 - App Attest runs only on physical devices, not in the Simulator.
-
-## Documentation
-
-- [iOS guide](https://github.com/jimmyleonardo/aegis-guardian/blob/main/ios/README.md)
-- [Security model](https://github.com/jimmyleonardo/aegis-guardian/blob/main/docs/security-model.md)
-- [Changelog](https://github.com/jimmyleonardo/aegis-guardian/blob/main/CHANGELOG.md)
 
 ## License
 
@@ -115,7 +99,3 @@ The signed host must enable App Attest and Sentinel must contain the matching
 Bundle ID and Apple Team ID. With `appAttestEnabled: false` (the default), iOS
 still sends telemetry as `UNVERIFIED` using only URL and Client ID. Opted-in
 App Attest failures do not fall back to unverified submissions.
-
-Production App Attest enrollment and telemetry were confirmed through the Flutter
-Pulse Pilates release app on a physical iPhone 11 on 2026-09-30. The XCFramework
-includes matching device and simulator dSYMs.
