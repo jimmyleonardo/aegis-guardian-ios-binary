@@ -21,13 +21,21 @@ See the [analytics guide](https://github.com/jimmyleonardo/aegis-guardian/blob/m
 and [verification report](https://github.com/jimmyleonardo/aegis-guardian/blob/main/docs/analytics-verification.md).
 Examples use placeholders; no test deployment URL or tracking key is included.
 
+## AegisPulse push notifications (3.6.0)
+
+`PulsePush` registers the APNs device token with the analytics identity and
+reports opens and dismissals from `UNNotificationResponse`. In a Notification
+Service Extension, `PulseNotificationService` attaches images and per-notification
+action buttons. Like analytics, it never runs a security scan or sends security
+telemetry. See the [push notifications guide](https://github.com/jimmyleonardo/aegis-guardian/blob/main/docs/push-notifications.md).
+
 ## Current releases
 
 | Platform | Version | Install |
 |---|---|---|
-| iOS | 3.5.0 | Swift Package Manager (recommended) or CocoaPods |
-| Android | 3.5.0 | Maven Central: `id.aegis-sentinel:aegis-guardian:3.5.0` |
-| Flutter | 3.5.0 | pub.dev: [`aegis_guardian`](https://pub.dev/packages/aegis_guardian) |
+| iOS | 3.6.0 | Swift Package Manager (recommended) or CocoaPods |
+| Android | 3.6.0 | Maven Central: `id.aegis-sentinel:aegis-guardian:3.6.0` |
+| Flutter | 3.6.0 | pub.dev: [`aegis_guardian`](https://pub.dev/packages/aegis_guardian) |
 
 Release notes: [CHANGELOG](https://github.com/jimmyleonardo/aegis-guardian/blob/main/CHANGELOG.md).
 
@@ -45,7 +53,7 @@ In Xcode: **File → Add Package Dependencies…** and enter
 `https://github.com/jimmyleonardo/aegis-guardian-ios-binary.git`, or in `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/jimmyleonardo/aegis-guardian-ios-binary.git", exact: "3.5.0")
+.package(url: "https://github.com/jimmyleonardo/aegis-guardian-ios-binary.git", exact: "3.6.0")
 ```
 
 Add the `AegisGuardian` product to your target and `import AegisGuardian`.
@@ -56,7 +64,7 @@ CocoaPods Trunk is becoming read-only, so new releases may stop reaching CocoaPo
 Prefer Swift Package Manager for new projects.
 
 ```ruby
-pod 'AegisGuardian', '3.5.0'
+pod 'AegisGuardian', '3.6.0'
 ```
 
 ## Quick start

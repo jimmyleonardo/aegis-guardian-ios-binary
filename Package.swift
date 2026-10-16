@@ -8,8 +8,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "AegisGuardian",
-            url: "https://github.com/jimmyleonardo/aegis-guardian-ios-binary/releases/download/ios-3.5.0/AegisGuardian.xcframework.zip",
-            checksum: "c826780eacf311a59d3dc45068a7db3e9194302db638d26e49fb09766a4c25e6"
+            url: "https://github.com/jimmyleonardo/aegis-guardian-ios-binary/releases/download/ios-3.6.0/AegisGuardian.xcframework.zip",
+            checksum: "6114121f8c856720776bfdedcd3018c8a6c9041c6617c6bd16b155e00f80524a"
         )
     ]
 )
