@@ -28,7 +28,7 @@ telemetry.
 |---|---|---|
 | iOS | 3.6.0 | Swift Package Manager (recommended) or CocoaPods |
 | Android | 3.6.0 | Maven Central: `id.aegis-sentinel:aegis-guardian:3.6.0` |
-| Flutter | 3.6.0 | pub.dev: [`aegis_guardian`](https://pub.dev/packages/aegis_guardian) |
+| Flutter | 3.6.1 | pub.dev: [`aegis_guardian`](https://pub.dev/packages/aegis_guardian) |
 
 ## Requirements
 
